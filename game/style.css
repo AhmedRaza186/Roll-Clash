@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(90deg, #b32730, #6e2e6b);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    cursor: pointer;
+}
+main {
+    width: 50%;
+    height: 70%;
+    background: white;
+    position: relative;
+    display: flex;
+    border-radius: 10px;
+
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+#player1 {
+    background: #d9a1ae;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+
+}
+
+#player2 {
+    background: #b06e89;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.playerInfoAndTS {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerName {
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.TScore {
+    margin-top: 15px;
+    font-size: 4rem;
+    font-weight: 300;
+    color: #bb3357;
+}
+
+.CScore {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.scoreBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    width: 50%;
+    height: 40%;
+    background: #bf2e57;
+}
+
+.btns {
+    width: 150px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btns button {
+    width: 100%;
+    height: 60px;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.719);
+    
+}
+
+.btns button img{
+    object-fit: contain;
+    width: 60%;
+    height: 50%;
+
+}

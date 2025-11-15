@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Roll Clash</h1>
+            <button><a href="">Leaderboard</a></button>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <h1>Roll Clash</h1>
+            <button><a href="./game/index.html">Play Game</a></button>
+        </div>
+    </main>
+    <footer>
+        <button>How to Play</button>
+    </footer>
+    <div class="manual">
+        <button id="manualBack">Back</button>
+       <div class="manualText">
+        <h2>🎲 Game Rules: Roll Clash</h2>
+        <p>This is a turn-based dice game based on risk-taking and chance.</p>
+
+        <div class="guide">
+            <div>
+                <h3>🎯 Objective</h3>
+                <ul>
+                    <li>Be the <strong>first player</strong> to reach a <strong>Total Score of 100 or more</strong>.</li>
+                </ul>
+
+                <hr>
+
+                <h3>📝 Detailed Instructions for Players</h3>
+
+                <h4>1. Starting Your Turn</h4>
+                <ol>
+                    <li>Your <strong>Current Score</strong> for the turn starts at zero (0).</li>
+                    <li><strong>Roll the Dice</strong>.</li>
+                </ol>
+
+                <h4>2. Roll Outcomes and Choices</h4>
+                <ul>
+                    <li><strong>If you roll a 2, 3, 4, 5, or 6:</strong>
+                        <ul>
+                            <li>The number is added to your <strong>Current Score</strong>.</li>
+                            <li>You must choose one of two options:
+                                <ul>
+                                    <li><strong>Roll Again:</strong> Click the Roll button to try for more points, risking your Current Score.</li>
+                                    <li><strong>Hold Score:</strong> Click the Hold button to save your points (proceed to Step 3).</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>If you roll a 1 :</strong>
+                        <ul>
+                            <li>Your <strong>Current Score</strong> is immediately reset to <strong>zero (0)</strong>.</li>
+                            <li>You receive <strong>no points</strong> for this turn.</li>
+                            <li>Your turn **immediately ends**, and play passes to the next player.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>3. Holding and Saving Points</h4>
+                <ul>
+                    <li>When you choose <strong>"Hold"</strong>:
+                        <ul>
+                            <li>Your <strong>Current Score</strong> is added to your permanent <strong>Total Score</strong>.</li>
+                            <li>The game checks if your Total Score is $\ge 100$.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h4>4. Winning the Game</h4>
+                <ul>
+                    <li>If your <strong>Total Score is 100 or higher</strong> after holding, <strong>You Win the Game!</strong></li>
+                </ul>
+
+                <h4>5. Game Reset</h4>
+                <ul>
+                    <li>If the game is reset, all players' <strong>Total Scores</strong> will be set to zero, and Player 1 will start.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

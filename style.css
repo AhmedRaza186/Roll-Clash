@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --bg1: #FCE4EC;
+    --bg2: #B388FF;
+    --panel: rgba(255, 255, 255, 0.45);
+    --panel-2: rgba(255, 255, 255, 0.65);
+    --accent: #FF4FA3;
+    --text: #2D1B47;
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    --radius: 22px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    animation: bg 11s ease-in-out infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+header {
+    width: 100%;
+    height: 80px;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+nav h1 {
+    margin-left: 25px;
+    letter-spacing: 2px;
+}
+
+nav button {
+    margin-right: 25px;
+    padding: 5px 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    transform: scale(1.05);
+
+}
+
+main {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content {
+    color: var(--text);
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.content h1 {
+    letter-spacing: 4px;
+    font-size: 3rem;
+}
+
+.content button {
+    width: 70%;
+    padding: 10px 0;
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    background-size: 400% 400%;
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    animation: bg 11s ease-in-out infinite;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+}
+
+.content button:hover {
+    transform: scale(1.09);
+}
+
+footer {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top: 2px solid var(--bg1);
+}
+
+footer button {
+    width:150px;
+    height: 60%;
+    border-radius: var(--radius);
+    margin-right: 25px;
+    margin-bottom: 10px;
+    border: none;
+    background: var(--text);
+    color: var(--bg1);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+footer button:hover{
+    background: var(--bg1);
+    color: var(--text);
+}
+.manual{
+    background: var(--bg1);
+    width: 100vw;
+    height: calc(100vh - 80px);
+    transition: transform .6s ease-in-out;
+    transform: translateY(0);
+    overflow-y: auto;
+}
+#manualBack{
+    margin-top: 25px;
+    margin-left: 35px;
+    width: auto;
+    padding: 10px 35px;
+    font-size: 1.1rem;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--bg2);
+    color: var(--bg1);
+    font-weight: 600;
+    cursor: pointer;
+}
+#manualBack:hover{
+    background: var(--bg1);
+    color: var(--bg2);
+}
+.manualText {  
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 25px; 
+}
+
+.guide {
+    margin: 50px auto; 
+    width: 85%; 
+    max-width: 900px; 
+    text-align: left; 
+    padding: 30px;
+    background: white; 
+    border-radius: var(--radius);
+    box-shadow:var(--shadow); 
+}
+
+.guide h2, .guide h3 {
+    color: var(--text); 
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.guide h4 {
+    color: #444; 
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.guide ul, .guide ol {
+    padding-left: 20px; 
+    margin-bottom: 20px;
+    line-height: 1.6; 
+}
+
+.guide ul li, .guide ol li {
+    margin-bottom: 8px;
+    list-style-type: none; 
+    position: relative;
+    padding-left: 25px;
+}
+
+.guide ul li::before {
+    content: "•";
+    color: var(--bg2); 
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    position: absolute;
+    left: 0;
+}
+
+.guide ol li::before {
+    content: counter(item, decimal) ".";
+    counter-increment: item;
+    color: #888; 
+    font-weight: 600;
+    position: absolute;
+    left: 0;
+}
+
+
+.guide strong {
+    color: #c90000; 
+    font-weight: 700;
+}
+
+.guide hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+nav h1{
+font-size: 1.5rem ;
+}
+nav button{
+    font-size: 1rem;
+}
+footer button{
+    /* width: 30%; */
+}
+    #manualBack {
+        margin-left: 20px; 
+    }
+
+    .guide {
+        width: 95%; 
+        margin: 30px auto; 
+        padding: 20px 15px; 
+    }
+    
+    .manualText {
+        margin-top: 10px;
+    }
+
+    .guide * {
+        text-align: left !important; 
+    }
+    
+    .manualText h2, .manualText h3 {
+        text-align: center !important;
+    }
+    
+    .guide ul, .guide ol {
+        padding-left: 10px;
+    }
+}
