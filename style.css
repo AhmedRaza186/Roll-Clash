@@ -135,7 +135,7 @@ footer {
 }
 
 footer button {
-    width:150px;
+    width:10%;
     height: 60%;
     border-radius: var(--radius);
     margin-right: 25px;
@@ -262,7 +262,7 @@ nav button{
     font-size: 1rem;
 }
 footer button{
-    /* width: 30%; */
+    width: 30%;
 }
     #manualBack {
         margin-left: 20px; 
