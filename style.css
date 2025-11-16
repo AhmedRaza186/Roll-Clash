@@ -135,7 +135,7 @@ footer {
 }
 
 footer button {
-    width:10%;
+    width: 10%;
     height: 60%;
     border-radius: var(--radius);
     margin-right: 25px;
@@ -146,11 +146,13 @@ footer button {
     font-size: 1.1rem;
     cursor: pointer;
 }
-footer button:hover{
+
+footer button:hover {
     background: var(--bg1);
     color: var(--text);
 }
-.manual{
+
+.manual {
     background: var(--bg1);
     width: 100vw;
     height: calc(100vh - 80px);
@@ -159,7 +161,8 @@ footer button:hover{
     overflow-y: auto;
     display: none;
 }
-#manualBack{
+
+#manualBack {
     margin-top: 25px;
     margin-left: 35px;
     width: auto;
@@ -172,60 +175,65 @@ footer button:hover{
     font-weight: 600;
     cursor: pointer;
 }
-#manualBack:hover{
+
+#manualBack:hover {
     background: var(--bg1);
     color: var(--bg2);
 }
-.manualText {  
+
+.manualText {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-top: 25px; 
+    margin-top: 25px;
 }
 
 .guide {
-    margin: 50px auto; 
-    width: 85%; 
-    max-width: 900px; 
-    text-align: left; 
+    margin: 50px auto;
+    width: 85%;
+    max-width: 900px;
+    text-align: left;
     padding: 30px;
-    background: white; 
+    background: white;
     border-radius: var(--radius);
-    box-shadow:var(--shadow); 
+    box-shadow: var(--shadow);
 }
 
-.guide h2, .guide h3 {
-    color: var(--text); 
+.guide h2,
+.guide h3 {
+    color: var(--text);
     text-align: center;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .guide h4 {
-    color: #444; 
+    color: #444;
     border-bottom: 2px solid #eee;
     padding-bottom: 5px;
     margin-top: 25px;
 }
 
-.guide ul, .guide ol {
-    padding-left: 20px; 
+.guide ul,
+.guide ol {
+    padding-left: 20px;
     margin-bottom: 20px;
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
-.guide ul li, .guide ol li {
+.guide ul li,
+.guide ol li {
     margin-bottom: 8px;
-    list-style-type: none; 
+    list-style-type: none;
     position: relative;
     padding-left: 25px;
 }
 
 .guide ul li::before {
     content: "•";
-    color: var(--bg2); 
+    color: var(--bg2);
     font-weight: bold;
     display: inline-block;
     width: 1em;
@@ -237,7 +245,7 @@ footer button:hover{
 .guide ol li::before {
     content: counter(item, decimal) ".";
     counter-increment: item;
-    color: #888; 
+    color: #888;
     font-weight: 600;
     position: absolute;
     left: 0;
@@ -245,7 +253,7 @@ footer button:hover{
 
 
 .guide strong {
-    color: #c90000; 
+    color: #c90000;
     font-weight: 700;
 }
 
@@ -256,41 +264,47 @@ footer button:hover{
 }
 
 @media (max-width: 768px) {
-    body{
+    body {
         overflow-y: auto;
     }
-nav h1{
-font-size: 1.5rem ;
-}
-nav button{
-    font-size: 1rem;
-}
-footer button{
-    width: 30%;
-}
+
+    nav h1 {
+        font-size: 1.5rem;
+    }
+
+    nav button {
+        font-size: 1rem;
+    }
+
+    footer button {
+        width: 30%;
+    }
+
     #manualBack {
-        margin-left: 20px; 
+        margin-left: 20px;
     }
 
     .guide {
-        width: 95%; 
-        margin: 30px auto; 
-        padding: 20px 15px; 
+        width: 95%;
+        margin: 30px auto;
+        padding: 20px 15px;
     }
-    
+
     .manualText {
         margin-top: 10px;
     }
 
     .guide * {
-        text-align: left !important; 
+        text-align: left !important;
     }
-    
-    .manualText h2, .manualText h3 {
+
+    .manualText h2,
+    .manualText h3 {
         text-align: center !important;
     }
-    
-    .guide ul, .guide ol {
+
+    .guide ul,
+    .guide ol {
         padding-left: 10px;
     }
 }

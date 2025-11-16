@@ -3,11 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Roll Clash</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+        <header>
+        <nav>
+            <h1>Roll Clash</h1>
+            <button id="scoreboard">Scoreboard</button>
+        </nav>
+    </header>
+    <div class="scoreboardSidebar">
+        <h1>Scoreboard</h1>
+        <div class="scoreboard">
+<table class="scoreTable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Player</th>
+            <th>Score</th>
+            <!-- <th>Winner</th> -->
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>PLAYER 1</td>
+            <td>42</td>
+            <!-- <td>🏆</td> -->
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>PLAYER 2</td>
+            <td>37</td>
+            <!-- <td>—</td> -->
+        </tr>
+    </tbody>
+
+</table>
+        </div>
+    </div>
 <main>
     <div class="players" id="player1">
 <div class="playerInfoAndTS">
@@ -35,18 +72,18 @@
     </div>
     <div class="btns">
         <button id="newGame">
-        <img src="./assets/newgame.png" alt="">
+        <img src="./../assets/newgame.png" alt="">
         <p>New Game</p>
         </button>
         <div id="diceimg">
-            <img src="./assets/1.webp" alt="">
+            <img src="./../assets/1.webp" alt="">
         </div>
 <button id="rollDice">
-        <img src="./assets/dices.png" alt="">
+        <img src="./../assets/dices.png" alt="">
 <p>Roll Dice</p>
 </button>
 <button id="hold">
-        <img src="./assets/hold.png" alt="">
+        <img src="./../assets/hold.png" alt="">
     <p>Hold</p>
 </button>
     </div>
