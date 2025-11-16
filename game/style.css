@@ -1,22 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --bg1: #FCE4EC;
+    --bg2: #B388FF;
+    --panel: rgba(255, 255, 255, 0.45);
+    --panel-2: rgba(255, 255, 255, 0.65);
+    --accent: #FF4FA3;
+    --text: #2D1B47;
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    --radius: 22px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif, serif;
+    font-family: 'Nunito', serif;
+
 }
 
 body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    background: linear-gradient(90deg, #b32730, #6e2e6b);
+    background: linear-gradient(135deg, var(--bg1), var(--bg2));
+    animation: bg 11s ease-in-out infinite;
+    background-size: 400% 400%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text);
 }
-button{
+
+@keyframes bg {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button {
     cursor: pointer;
 }
+
 main {
     width: 50%;
     height: 70%;
@@ -38,14 +71,14 @@ main {
 }
 
 #player1 {
-    background: #d9a1ae;
+    background: var(--panel);
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 
 }
 
 #player2 {
-    background: #b06e89;
+    background: var(--panel-2);
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -63,13 +96,14 @@ main {
     font-size: 2.2rem;
     font-weight: 400;
     letter-spacing: 2px;
+    color: var(--text);
 }
 
 .TScore {
     margin-top: 15px;
     font-size: 4rem;
     font-weight: 300;
-    color: #bb3357;
+    color: var(--accent);
 }
 
 .CScore {
@@ -78,7 +112,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: var(--bg1);
 }
 
 .scoreBox {
@@ -91,7 +125,8 @@ main {
     font-weight: 400;
     width: 50%;
     height: 40%;
-    background: #bf2e57;
+    border-radius: var(--radius);
+    background: #9f67ff;
 }
 
 .btns {
@@ -111,14 +146,13 @@ main {
     height: 60px;
     padding: 10px 5px;
     border: none;
-    border-radius: 40px;
-    background: rgba(255, 255, 255, 0.719);
-    
+    border-radius: var(--radius);
+    background: var(--bg1);
+
 }
 
-.btns button img{
+.btns button img {
     object-fit: contain;
     width: 60%;
     height: 50%;
-
 }
