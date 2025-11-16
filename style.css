@@ -21,7 +21,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     background: linear-gradient(135deg, var(--bg1), var(--bg2));
     animation: bg 11s ease-in-out infinite;
     background-size: 400% 400%;
@@ -256,6 +256,9 @@ footer button:hover{
 }
 
 @media (max-width: 768px) {
+    body{
+        overflow-y: auto;
+    }
 nav h1{
 font-size: 1.5rem ;
 }
