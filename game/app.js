@@ -3,15 +3,17 @@ document.querySelector('nav h1').addEventListener('click',function(){
 })
 
 let scoreboardBtn = document.querySelector('#scoreboard')
-scoreboardBtn.addEventListener('click', scoreboard)
-function scoreboard() {
+scoreboardBtn.addEventListener('click', openscoreboard)
+function openscoreboard() {
     let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
-    scoreboardSidebar.classList.toggle('active')
-    if(scoreboardSidebar.classList.contains('active')){
-        scoreboardBtn.innerText = 'Back'
-    }
-    else{
-       scoreboardBtn.innerText = 'Scoreboard'
+    scoreboardSidebar.style.transform = 'translateX(0)'
+    
+}
 
-   }
+let backBtn = document.querySelector('#backBtn')
+ backBtn.addEventListener('click', closescoreboard)
+function closescoreboard() {
+    let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
+    scoreboardSidebar.style.transform = 'translateX(100%)'
+
 }
