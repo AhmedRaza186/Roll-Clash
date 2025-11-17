@@ -107,12 +107,18 @@ holdBtn.addEventListener('click', function () {
         TScore = document.querySelector('#player2 .TScore')
 
     }
-    TScore.innerText = CScoreNum
-    if(TScore == 100){
+    let TotalScore = +(TScore.innerText)
+    TotalScore += CScoreNum
+    TScore.innerText = TotalScore
+    if(TotalScore >= 100){
         if(player1Turn){
-            winner(player1Name)
+            winner(document.querySelectorAll('.playerName')[0].innerText)
+        }
+        else{
+            winner(document.querySelectorAll('.playerName')[1].innerText)
         }
     }
+    updateScore()
     switchTurn()
 
 })
