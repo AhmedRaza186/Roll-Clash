@@ -17,6 +17,9 @@
     box-sizing: border-box;
     font-family: 'Nunito', serif;
 }
+button{
+    cursor: pointer;
+}
 
 body {
     width: 100vw;
@@ -82,6 +85,96 @@ nav button {
 nav button:hover {
     transform: scale(1.05);
 
+}
+
+.leaderboardSidebar{
+    width: 100vw;
+      height: 100%;
+    max-height: 100vh;
+    background: var(--bg1);
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 25px;
+    transform: translateX(100%); 
+     transition: transform .6s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    
+}
+.leaderboardSidebar{
+    height: 100%;
+    max-height: 100vh;
+}
+.leaderboardSidebar h1{
+    color: var(--text);
+}
+#backBtn{
+    display: flex;
+    justify-self: flex-start;
+    background: var(--bg2);
+    color: white;
+    width: 80px;
+    padding: 10px 10px;
+    border-radius: var(--radius);
+    border: none;
+    justify-content: center;
+    justify-self: center;
+    align-self: flex-start;
+    margin-left: 25px;
+}
+.leaderboard{
+    width: 60%;
+    height: auto;
+    background: white;
+    margin-top: 15px;
+    border-radius: var(--radius);
+    
+}
+
+.leaderTable {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--panel);
+    backdrop-filter: blur(12px);
+    font-size: 1.2rem;
+}
+
+.leaderTable thead {
+    background: var(--bg2);
+    color: white;
+}
+
+.leaderTable th,
+.leaderTable td {
+    padding: 15px 10px;
+    text-align: center;
+}
+
+.leaderTable tbody tr {
+    background: rgba(255, 255, 255, 0.45);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+}
+
+.leaderTable tbody tr:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.01);
+}
+
+.leaderTable td:nth-child(1) {
+    width: 50px;
+    font-weight: 700;
+}
+
+.leaderTable td:nth-child(4) {
+    color: var(--bg2);
+    font-weight: 700;
 }
 
 main {
@@ -273,6 +366,13 @@ footer button:hover {
     }
 
     nav button {
+        font-size: 1rem;
+    }
+
+    .leaderboard {
+        width: 90%;
+    }
+        .leaderTable{
         font-size: 1rem;
     }
 

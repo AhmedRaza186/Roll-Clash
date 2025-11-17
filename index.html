@@ -4,22 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Roll Clash</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 </head>
 
 <body>
     <header>
         <nav>
             <h1>Roll Clash</h1>
-            <button><a href="">Leaderboard</a></button>
+            <button id="leaderboard">Leaderboard</button>
             
         </nav>
     </header>
     <main>
+        <div class="leaderboardSidebar">
+           <button id="backBtn">Back</button>
+           <h1>Leaderboard</h1>
+           <div class="leaderboard">
+   <table class="leaderTable">
+       <thead>
+           <tr>
+               <th>#</th>
+               <th>Details</th>
+               <th>Winner Score</th>
+               <th>Loser Score</th>
+           </tr>
+       </thead>
+   
+       <tbody>
+        
+       </tbody>
+   
+   </table>
+           </div>
+       </div>
+        
         <div class="content">
             <h1>Roll Clash</h1>
             <button><a href="./game/index.html">Play Game</a></button>
@@ -38,7 +61,7 @@
             <div>
                 <h3>🎯 Objective</h3>
                 <ul>
-                    <li>Be the <strong>first player</strong> to reach a <strong>Total Score of 100 or more</strong>.</li>
+                    <li>Be the <strong>first player</strong> to reach a <strong>Total Score of 50 or more</strong>.</li>
                 </ul>
 
                 <hr>
@@ -46,10 +69,10 @@
                 <h3>📝 Detailed Instructions for Players</h3>
 
                 <h4>1. Starting Your Turn</h4>
-                <ol>
+                <ul>
                     <li>Your <strong>Current Score</strong> for the turn starts at zero (0).</li>
                     <li><strong>Roll the Dice</strong>.</li>
-                </ol>
+                </ul>
 
                 <h4>2. Roll Outcomes and Choices</h4>
                 <ul>
@@ -68,7 +91,7 @@
                         <ul>
                             <li>Your <strong>Current Score</strong> is immediately reset to <strong>zero (0)</strong>.</li>
                             <li>You receive <strong>no points</strong> for this turn.</li>
-                            <li>Your turn **immediately ends**, and play passes to the next player.</li>
+                            <li>Your turn <strong>immediately ends</strong>, and play passes to the next player.</li>
                         </ul>
                     </li>
                 </ul>
@@ -78,14 +101,14 @@
                     <li>When you choose <strong>"Hold"</strong>:
                         <ul>
                             <li>Your <strong>Current Score</strong> is added to your permanent <strong>Total Score</strong>.</li>
-                            <li>The game checks if your Total Score is $\ge 100$.</li>
+                            <li>The game checks if your Total Score is 50.</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h4>4. Winning the Game</h4>
                 <ul>
-                    <li>If your <strong>Total Score is 100 or higher</strong> after holding, <strong>You Win the Game!</strong></li>
+                    <li>If your <strong>Total Score is 50 or higher</strong> after holding, <strong>You Win the Game!</strong></li>
                 </ul>
 
                 <h4>5. Game Reset</h4>

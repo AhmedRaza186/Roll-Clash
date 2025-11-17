@@ -17,17 +17,30 @@ function closescoreboard() {
     scoreboardSidebar.style.transform = 'translateX(100%)'
 
 }
+let player1Name
+let player2Name
+
+let totalScore1 = 0
+let totalScore2 = 0
 
 let startGameBtn = document.querySelector('#startGameBtn')
 startGameBtn.addEventListener('click', function(){
     document.querySelector('.playerNameModal').style.display = 'none'
-    let player1Name = document.querySelector('#player1NameInput').value
-    let player2Name = document.querySelector('#player2NameInput').value
+     player1Name = document.querySelector('#player1NameInput').value
+     player2Name = document.querySelector('#player2NameInput').value
+    if(player1Name == ''){
+player1Name = 'Player 1'
+    }
+    if(player2Name == ''){
+player2Name = 'Player 2'
+    }
     document.querySelectorAll('.playerName')[0].innerText = player1Name
     document.querySelectorAll('.playerName')[1].innerText = player2Name
 })
 
-
+let homeBtn = document.querySelector('#home').addEventListener('click',function(){
+    window.location = './../index.html'
+})
 
 let modalScoreboardBtn = document.querySelector('#modalScoreboard')
 modalScoreboardBtn.addEventListener('click', openscoreboard)
@@ -49,7 +62,7 @@ let holdBtn = document.querySelector('#hold')
 let CScoreDisplay
 let TScore
 let diceAud = new Audio('./../assets/dice-95077.mp3')
-
+let scoreboardArr = []
 
 newGameBtn.addEventListener('click', resetGame)
 
@@ -63,12 +76,27 @@ function updateScore() {
     }
     else {
         CScoreDisplay = document.querySelector('#player2 .CScore .scoreBox .CScoreP')
-
+        
     }
     CScoreDisplay.innerText = CScoreNum
 }
+let scoreboardI = 0
+function updateScoreboard(){
+    scoreboardI++
+    scoreboardArr.forEach(score =>{
+        let tableContent = document.querySelector('tbody')
+        tableContent.innerHTML += `<tr>
+        <td>${scoreboardI}</td>
+        <td>${player1Turn ? player2Name : player1Name}</td>
+        <td>${score}</td>
+        <td>${player1Turn ? totalScore2 : totalScore1}</td>
+        </tr>`
+    })
+    scoreboardArr.pop()
+}
 
 function switchTurn() {
+    scoreboardArr.push(CScoreNum)
     CScoreNum = 0
     player1.classList.toggle('active')
     player2.classList.toggle('active')
@@ -79,6 +107,7 @@ function switchTurn() {
         player1Turn = true
     }
     updateScore()
+    updateScoreboard()
 }
 
 rollDiceBtn.addEventListener('click', diceRoll)
@@ -102,22 +131,19 @@ function diceRoll() {
 holdBtn.addEventListener('click', function () {
     if (player1Turn) {
         TScore = document.querySelector('#player1 .TScore')
+        totalScore1 += CScoreNum
+        TScore.innerText = totalScore1
     }
     else {
         TScore = document.querySelector('#player2 .TScore')
-
+        totalScore2 += CScoreNum
+        TScore.innerText = totalScore2
     }
-    let TotalScore = +(TScore.innerText)
-    TotalScore += CScoreNum
-    TScore.innerText = TotalScore
-    if(TotalScore >= 100){
-        if(player1Turn){
-            winner(document.querySelectorAll('.playerName')[0].innerText)
-        }
-        else{
-            winner(document.querySelectorAll('.playerName')[1].innerText)
-        }
+    if ((player1Turn && totalScore1 >= 10) || (!player1Turn && totalScore2 >= 10)) {
+        
+        winner(player1Turn ? player1Name : player2Name,!player1Turn ? player1Name : player2Name,player1Turn ? totalScore1 : totalScore2,!player1Turn ? totalScore1 : totalScore2)
     }
+    
     updateScore()
     switchTurn()
 
@@ -127,11 +153,25 @@ function resetGame() {
     window.location.reload()
 }
 
-function winner(player) {
+
+function winner(winner,loser,winnerScore,loserScore) {
     let winnerModal = document.querySelector('.winnerModal')
     winnerModal.style.display = 'flex'
     winnerModal.style.opacity = '1'
     let winnerText =  document.querySelector('#winnerText')
-    winnerText.innerText = `${player} Wins`
+    winnerText.innerText = `${winner} Wins`
+
+    let resultArr = JSON.parse(localStorage.getItem('winnerResult')) || []
+
+    let result = {
+        winner: winner,
+        loser: loser,
+        winnerScore: winnerScore,
+        loserScore: loserScore,
+    }
+    
+    resultArr.push(result)
+    localStorage.setItem('winnerResult',JSON.stringify(resultArr))
+
 }
 

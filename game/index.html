@@ -6,6 +6,7 @@
     <title>Roll Clash</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="./../assets/favicon.png" type="image/x-icon">
 </head>
 <body>
         <header>
@@ -24,23 +25,12 @@
             <th>#</th>
             <th>Player</th>
             <th>Score</th>
-            <!-- <th>Winner</th> -->
+            <th>Total Score</th>
         </tr>
     </thead>
 
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>PLAYER 1</td>
-            <td>42</td>
-            <!-- <td>🏆</td> -->
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>PLAYER 2</td>
-            <td>37</td>
-            <!-- <td>—</td> -->
-        </tr>
+     
     </tbody>
 
 </table>
@@ -98,7 +88,8 @@
     </div>
     <div class="winnerModal" id="winnerModal">
     <div class="modalContent">
-        <h2 id="winnerText">PLAYER 1 WINS!</h2>
+        <button id="home">Home</button>
+        <h2 id="winnerText"></h2>
         <button id="modalScoreboard">Scoreboard</button>
         <button id="restartGame">New Game</button>
     </div>
