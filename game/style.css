@@ -18,9 +18,9 @@
     font-family: 'Nunito', serif;
 
 }
-html{
+/* html{
     overflow-x: hidden;
-}
+} */
 
 body {
     /* width: 100vw; */
@@ -193,6 +193,68 @@ main {
     border-radius: 10px;
 
 }
+.playerNameModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(45,27,71,0.8); /* dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+    pointer-events: all;
+    z-index: 50;
+}
+
+.playerNameModal .modalContent {
+    background: linear-gradient(135deg, #FCE4EC, #B388FF);
+    padding: 40px 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.playerNameModal .modalContent h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: var(--accent);
+}
+
+.playerNameModal .modalContent input {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    border-radius: var(--radius);
+    border: none;
+    text-align: center;
+}
+.playerNameModal .modalContent input:focus{
+    border: 2px solid var(--bg2);
+    outline: none
+}
+
+.playerNameModal .modalContent button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    background: var(--bg1);
+    color: var(--text);
+    transition: transform 0.2s ease;
+}
+
+.playerNameModal .modalContent button:hover {
+    transform: scale(1.05);
+}
+
 
 .players {
     display: flex;
@@ -204,7 +266,9 @@ main {
     background: var(--panel);
 
 }
-
+.active{
+    background-color: var(--activePanel);
+}
 #player1 {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -289,6 +353,58 @@ main {
     width: 60%;
     height: 50%;
 }
+.winnerModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(45, 27, 71, 0.8); 
+    display: none;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 9;
+}
+
+.winnerModal.show {
+    opacity: 1;
+
+}
+
+.modalContent {
+    background: linear-gradient(135deg, #FCE4EC, #B388FF);
+    padding: 40px 60px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    color: var(--text);
+}
+
+.modalContent h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--accent);
+}
+
+.modalContent button {
+    margin: 10px;
+    padding: 10px 25px;
+    font-size: 1.2rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    background: var(--bg1);
+    color: var(--text);
+    transition: transform 0.2s ease;
+}
+
+.modalContent button:hover {
+    transform: scale(1.05);
+}
+
 @media (max-width:1024px) {
     main{
         width: 70%;

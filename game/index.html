@@ -47,6 +47,14 @@
         </div>
     </div>
 <main>
+    <div class="playerNameModal" id="playerNameModal">
+    <div class="modalContent">
+        <h2>Enter Players' Names</h2>
+        <input type="text" id="player1NameInput" placeholder="Player 1 Name">
+        <input type="text" id="player2NameInput" placeholder="Player 2 Name">
+        <button id="startGameBtn">Start Game</button>
+    </div>
+</div>
     <div class="players" id="player1">
 <div class="playerInfoAndTS">
     <h2 class="playerName">PLAYER 1</h2>
@@ -55,7 +63,7 @@
 <div class="CScore">
     <div class="scoreBox">
         <p>CURRENT</p>
-        <p>0</p>
+        <p class="CScoreP">0</p>
     </div>
 </div>
     </div>
@@ -67,7 +75,7 @@
 <div class="CScore">
 <div class="scoreBox">
     <p>CURRENT</p>
-    <p>0</p>
+    <p class="CScoreP">0</p>
 </div>
 </div>
     </div>
@@ -77,7 +85,7 @@
         <p>New Game</p>
         </button>
         <div id="diceimg">
-            <img src="./../assets/1.webp" alt="">
+            <img src="" alt="">
         </div>
 <button id="rollDice">
         <img src="./../assets/dices.png" alt="">
@@ -88,6 +96,13 @@
     <p>Hold</p>
 </button>
     </div>
+    <div class="winnerModal" id="winnerModal">
+    <div class="modalContent">
+        <h2 id="winnerText">PLAYER 1 WINS!</h2>
+        <button id="modalScoreboard">Scoreboard</button>
+        <button id="restartGame">New Game</button>
+    </div>
+</div>
 </main>
 
     <script src="./app.js"></script>
