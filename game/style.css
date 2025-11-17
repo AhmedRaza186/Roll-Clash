@@ -75,6 +75,7 @@ nav {
 nav h1 {
     margin-left: 25px;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 nav button {
@@ -296,3 +297,118 @@ main {
         width: 100%;
     }
 }
+@media (max-width: 480px){
+    nav{
+        padding: 10px 0;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        height: 100vh;
+    }
+    
+    .btns{
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        height: 100vh !important;
+        
+    }
+    .btns button{
+        width: 40%;
+        border-radius: var(--radius);
+    }
+    .players{
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 80%;
+        border-radius: var(--radius);
+    
+    }
+    .playerInfoAndTS{
+        height: auto;
+    }
+    .CScore{
+        height: auto;
+    }
+.scoreBox{
+    height: auto;
+    font-size: 1.2rem;
+    gap: 5px;
+    padding: 5px 0;
+}
+#player1{
+    border-bottom-right-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+
+}
+#player2 {
+    border-bottom-left-radius: var(--radius);
+    border-top-left-radius: var(--radius);
+    
+}
+}
+@media (max-width:480px){
+
+    main{
+        display: grid;
+        width: 100%;
+        gap: 25px;
+        grid-template-areas:
+            "newgame"
+            "player1"
+            "dice"
+            "roll"
+            "player2"
+            "hold";
+        padding: 20px 0;
+        height: auto;
+        align-items: center;
+    }
+
+    #newGame{
+        grid-area: newgame;
+        width: 60%;
+        margin: 0 auto;
+    }
+    #player1{
+        grid-area: player1;
+        width: 80%;
+        margin: 0 auto;
+    }
+    #diceimg{
+        grid-area: dice;
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+    }
+    #rollDice{
+        grid-area: roll;
+        width: 60%;
+        margin: 0 auto;
+        /* margin-top: 50px; */
+    }
+    #player2{
+        grid-area: player2;
+        width: 80%;
+        margin: 0 auto;
+    }
+    #hold{
+        grid-area: hold;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .btns{
+        display: contents; /* THIS IS THE MAGIC */
+    }
+}
+
+
