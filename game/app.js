@@ -17,6 +17,15 @@ function openscoreboard() {
 
 
 }
+
+let backBtn = document.querySelector('#backBtn')
+backBtn.addEventListener('click', closescoreboard)
+function closescoreboard() {
+    let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
+    scoreboardSidebar.style.transform = 'translateX(100%)'
+    if(sidebarDefault == 'none')scoreboardSidebar.style.display = 'none'
+    
+}
 let openSettings = document.querySelector("#openSettings");
 let modalOverlay = document.querySelector("#modalOverlay");
 let settingsModal = document.querySelector("#settingsModal");
@@ -25,32 +34,27 @@ let saveSettings = document.querySelector("#saveSettings");
 openSettings.addEventListener("click", () => {
     modalOverlay.style.display = "block";
     document.querySelector('.settings-modal').style.display = 'block'
-    settingsModal.classList.add("show");
-});
-
-// modalOverlay.addEventListener("click", () => {
-//     modalOverlay.style.display = "none";
-//     settingsModal.classList.remove("show");
-// });
+})
 
 saveSettings.addEventListener("click", () => {
     modalOverlay.style.display = "none";
     document.querySelector('.settings-modal').style.display = 'none'
-
-    settingsModal.classList.remove("show");
-
-    // values later connect to game...
 })
 
-let backBtn = document.querySelector('#backBtn')
-backBtn.addEventListener('click', closescoreboard)
-function closescoreboard() {
-    let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
-    scoreboardSidebar.style.transform = 'translateX(100%)'
-    if(sidebarDefault == 'none')scoreboardSidebar.style.display = 'none'
+let winningScore = 50
+let winningScoreDisplay = document.querySelector('#winningScoreDisplay').innerText = `Winning Score is ${winningScore}`
 
+let holdLimit = 'no-limit'
+let playerHoldCount = { p1: 0, p2: 0 }
 
-}
+saveSettings.addEventListener('click', () => {
+    winningScore = parseInt(document.querySelector('#setWinningScore').value)
+        holdLimit = document.querySelector('#setHoldLimit').value
+    if(winningScore < 30)winningScore = 30
+    else if(winningScore > 100) winningScore = 100
+ winningScoreDisplay = document.querySelector('#winningScoreDisplay').innerText = `Winning Score is ${winningScore}`
+    
+})
 let player1Name
 let player2Name
 
@@ -169,8 +173,25 @@ function diceRoll() {
         updateScore()
     }
 }
+let holdCountDisplay1 = document.querySelector('#holdCountDisplay1')
+let holdCountDisplay2 = document.querySelector('#holdCountDisplay2')
 
 holdBtn.addEventListener('click', function () {
+    let currentPlayer = player1Turn ? 'p1' : 'p2';
+    let holdDisplay = player1Turn ? holdCountDisplay1 : holdCountDisplay2
+    let remainingHolds = holdLimit - playerHoldCount[currentPlayer]
+    player1Turn ? holdCountDisplay1.innerText = holdLimit  : holdCountDisplay2.innerText = holdLimit 
+if(holdLimit !== 'no-limit' && playerHoldCount[currentPlayer] >= parseInt(holdLimit)) {
+    holdDisplay.style.color = 'red'
+    holdDisplay.style.fontSize = '0.9rem'
+    holdDisplay.innerText = 'Hold Limit Reached' 
+    return
+}
+ else {
+    holdDisplay.innerText = `Hold Remaining: ${remainingHolds - 1}`
+        }
+playerHoldCount[currentPlayer]++
+
     if (player1Turn) {
         TScore = document.querySelector('#player1 .TScore')
         totalScore1 += CScoreNum
@@ -181,8 +202,7 @@ holdBtn.addEventListener('click', function () {
         totalScore2 += CScoreNum
         TScore.innerText = totalScore2
     }
-    if ((player1Turn && totalScore1 >= 10) || (!player1Turn && totalScore2 >= 10)) {
-        
+    if ((player1Turn && totalScore1 >= winningScore) || (!player1Turn && totalScore2 >= winningScore)) {   
         winner(player1Turn ? player1Name : player2Name,!player1Turn ? player1Name : player2Name,player1Turn ? totalScore1 : totalScore2,!player1Turn ? totalScore1 : totalScore2)
     }
     

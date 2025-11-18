@@ -15,6 +15,7 @@
             <button id="scoreboard">Scoreboard</button>
         </nav>
     </header>
+    <p style="margin-top: 20px; font-size: 1.2rem; font-weight: 900;" id="winningScoreDisplay"></p>
     <div class="scoreboardSidebar">
         <button id="backBtn">Back</button>
         <h1>Scoreboard</h1>
@@ -45,40 +46,36 @@
         <button id="startGameBtn">Start Game</button>
     </div>
 </div>
-<!-- Settings Icon -->
 <div id="openSettings" class="settings-icon">
     <i class="fa-solid fa-gear"></i>
 </div>
 
-<!-- Modal Overlay -->
 <div id="modalOverlay" class="modalOverlay"></div>
-
-<!-- Settings Modal -->
 <div id="settingsModal" class="settings-modal">
     <h2>Settings</h2>
 
-    <label>Winning Score</label>
-    <input type="number" id="setWinningScore" min="30" max="100" value="50">
+    <label>Winning Score(30-100)</label>
+    <input type="number" id="setWinningScore" min="30" max="100" value="50" placeholder="only 30-100">
 
     <label>Hold Limit (times)</label>
     <select id="setHoldLimit">
         <option value="no-limit" selected>No Limit</option>
-        <option value="5">5 Times</option>
-        <option value="6">6 Times</option>
-        <option value="7">7 Times</option>
-        <option value="8">8 Times</option>
-        <option value="9">9 Times</option>
-        <option value="10">10 Times</option>
-        <option value="11">11 Times</option>
-        <option value="12">12 Times</option>
-        <option value="13">13 Times</option>
-        <option value="14">14 Times</option>
-        <option value="15">15 Times</option>
-        <option value="16">16 Times</option>
-        <option value="17">17 Times</option>
-        <option value="18">18 Times</option>
-        <option value="19">19 Times</option>
-        <option value="20">20 Times</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
     </select>
 
     <button id="saveSettings">Save</button>
@@ -93,6 +90,8 @@
     <div class="scoreBox">
         <p>CURRENT</p>
         <p class="CScoreP">0</p>
+    <p style="font-size: 1rem; font-weight: 900;" id="holdCountDisplay1"></p>
+
     </div>
 </div>
     </div>
@@ -105,6 +104,7 @@
 <div class="scoreBox">
     <p>CURRENT</p>
     <p class="CScoreP">0</p>
+    <p style="font-size: 1rem; font-weight: 900;" id="holdCountDisplay2"></p>
 </div>
 </div>
     </div>
@@ -123,6 +123,7 @@
 <button id="hold">
         <img src="./../assets/hold.png" alt="">
     <p>Hold</p>
+    
 </button>
     </div>
     <div class="winnerModal" id="winnerModal">
