@@ -199,7 +199,7 @@ main {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(45,27,71,0.8); /* dark overlay */
+    background: rgba(45,27,71,0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,6 +207,7 @@ main {
     opacity: 1;
     pointer-events: all;
     z-index: 50;
+    overflow-y: hidden !important;
 }
 
 .playerNameModal .modalContent {
@@ -505,13 +506,13 @@ main {
         width: 100%;
         gap: 25px;
         grid-template-areas:
-            "newgame"
-            "player1"
-            "dice"
-            "roll"
-            "player2"
-            "hold";
-        padding: 20px 0;
+        "newgame"
+        "player1"
+        "dice"
+        "hold"
+        "player2"
+        "roll";
+        /* padding: 20px 0; */
         height: auto;
         align-items: center;
     }
@@ -537,6 +538,7 @@ main {
         width: 60%;
         margin: 0 auto;
         /* margin-top: 50px; */
+        display: none;
     }
     #player2{
         grid-area: player2;
@@ -547,9 +549,11 @@ main {
         grid-area: hold;
         width: 60%;
         margin: 0 auto;
+        position: sticky;
+        top: 0;
     }
     .btns{
-        display: contents; /* THIS IS THE MAGIC */
+        display: contents;
     }
 }
 

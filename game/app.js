@@ -102,15 +102,23 @@ function switchTurn() {
     player2.classList.toggle('active')
     if (player1Turn) {
         player1Turn = false
+           diceImg.scrollIntoView({
+    behavior: 'smooth'
+})
     }
     else {
         player1Turn = true
+                   player1.scrollIntoView({
+    behavior: 'smooth'
+})
+
     }
     updateScore()
     updateScoreboard()
 }
 
 rollDiceBtn.addEventListener('click', diceRoll)
+diceImg.addEventListener('click', diceRoll)
 function diceRoll() {
     rotateI++
     let num = Math.ceil(Math.random() * 6)
