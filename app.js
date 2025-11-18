@@ -42,12 +42,21 @@ function updateleaderboard(){
     tableContent.innerHTML = ''
 
     leaderboardArr.forEach(function(result,i){
-        tableContent.innerHTML += `<tr>
+      let tr = document.createElement('tr')
+        tr.innerHTML = `<tr>
         <td>${i + 1}</td>
         <td><strong>${result.winner}</strong> wins against <strong>${result.loser}</strong></td>
         <td>${result.winnerScore}</td>
         <td>${result.loserScore}</td>
         </tr>`
-    })
+          tableContent.appendChild(tr)
+          
+        })
+        
+      }
 
-}
+
+      document.querySelector('#clearAllLeaderboard').addEventListener('click', function(){
+    localStorage.removeItem('winnerResult')
+    updateleaderboard()
+})

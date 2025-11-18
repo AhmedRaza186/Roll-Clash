@@ -181,11 +181,15 @@ holdBtn.addEventListener('click', function () {
     let holdDisplay = player1Turn ? holdCountDisplay1 : holdCountDisplay2
     let remainingHolds = holdLimit - playerHoldCount[currentPlayer]
     player1Turn ? holdCountDisplay1.innerText = holdLimit  : holdCountDisplay2.innerText = holdLimit 
-if(holdLimit !== 'no-limit' && playerHoldCount[currentPlayer] >= parseInt(holdLimit)) {
+if(holdLimit !== 'no-limit' && remainingHolds == '1') {
     holdDisplay.style.color = 'red'
     holdDisplay.style.fontSize = '0.9rem'
     holdDisplay.innerText = 'Hold Limit Reached' 
+    winner(player1Turn ? player1Name : player2Name,!player1Turn ? player1Name : player2Name,player1Turn ? totalScore1 : totalScore2,!player1Turn ? totalScore1 : totalScore2)
     return
+}
+else if(holdLimit == 'no-limit'){
+    holdDisplay.innerText = 'unlimited Holds'
 }
  else {
     holdDisplay.innerText = `Hold Remaining: ${remainingHolds - 1}`
