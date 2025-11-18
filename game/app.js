@@ -168,7 +168,9 @@ function winner(winner,loser,winnerScore,loserScore) {
     winnerModal.style.opacity = '1'
     let winnerText =  document.querySelector('#winnerText')
     winnerText.innerText = `${winner} Wins`
-window.location = ''
+               newGameBtn.scrollIntoView({
+    behavior: 'smooth'
+})
 
     let resultArr = JSON.parse(localStorage.getItem('winnerResult')) || []
 
