@@ -58,65 +58,67 @@
         <p>This is a turn-based dice game based on risk-taking and chance.</p>
 
         <div class="guide">
-            <div>
-                <h3>🎯 Objective</h3>
+    <div>
+        <h3>🎯 Objective</h3>
+        <ul>
+            <li>Be the <strong>first player</strong> to reach a <strong>Total Score of 50 or more</strong>, or make your opponent lose by their Hold Limit.</li>
+        </ul>
+
+        <hr>
+
+        <h3>📝 Detailed Instructions for Players</h3>
+
+        <h4>1. Starting Your Turn</h4>
+        <ul>
+            <li>Your <strong>Current Score</strong> for the turn starts at zero (0).</li>
+            <li><strong>Roll the Dice</strong>.</li>
+        </ul>
+
+        <h4>2. Roll Outcomes and Choices</h4>
+        <ul>
+            <li><strong>If you roll a 2, 3, 4, 5, or 6:</strong>
                 <ul>
-                    <li>Be the <strong>first player</strong> to reach a <strong>Total Score of 50 or more</strong>.</li>
-                </ul>
-
-                <hr>
-
-                <h3>📝 Detailed Instructions for Players</h3>
-
-                <h4>1. Starting Your Turn</h4>
-                <ul>
-                    <li>Your <strong>Current Score</strong> for the turn starts at zero (0).</li>
-                    <li><strong>Roll the Dice</strong>.</li>
-                </ul>
-
-                <h4>2. Roll Outcomes and Choices</h4>
-                <ul>
-                    <li><strong>If you roll a 2, 3, 4, 5, or 6:</strong>
+                    <li>The number is added to your <strong>Current Score</strong>.</li>
+                    <li>You must choose one of two options:
                         <ul>
-                            <li>The number is added to your <strong>Current Score</strong>.</li>
-                            <li>You must choose one of two options:
-                                <ul>
-                                    <li><strong>Roll Again:</strong> Click the Roll button to try for more points, risking your Current Score.</li>
-                                    <li><strong>Hold Score:</strong> Click the Hold button to save your points (proceed to Step 3).</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><strong>If you roll a 1 :</strong>
-                        <ul>
-                            <li>Your <strong>Current Score</strong> is immediately reset to <strong>zero (0)</strong>.</li>
-                            <li>You receive <strong>no points</strong> for this turn.</li>
-                            <li>Your turn <strong>immediately ends</strong>, and play passes to the next player.</li>
+                            <li><strong>Roll Again:</strong> Click the Roll button to try for more points, risking your Current Score.</li>
+                            <li><strong>Hold Score:</strong> Click the Hold button to save your points and end your turn.</li>
                         </ul>
                     </li>
                 </ul>
-
-                <h4>3. Holding and Saving Points</h4>
+            </li>
+            <li><strong>If you roll a 1 :</strong>
                 <ul>
-                    <li>When you choose <strong>"Hold"</strong>:
-                        <ul>
-                            <li>Your <strong>Current Score</strong> is added to your permanent <strong>Total Score</strong>.</li>
-                            <li>The game checks if your Total Score is 50.</li>
-                        </ul>
-                    </li>
+                    <li>Your <strong>Current Score</strong> is immediately reset to <strong>zero (0)</strong>.</li>
+                    <li>Your turn <strong>immediately ends</strong>, and play passes to the next player.</li>
                 </ul>
+            </li>
+        </ul>
 
-                <h4>4. Winning the Game</h4>
+        <h4>3. Holding and Hold Limit</h4>
+        <ul>
+            <li>When you choose <strong>"Hold"</strong>:
                 <ul>
-                    <li>If your <strong>Total Score is 50 or higher</strong> after holding, <strong>You Win the Game!</strong></li>
+                    <li>Your <strong>Current Score</strong> is added to your permanent <strong>Total Score</strong>.</li>
+                    <li>You can set a <strong>Hold Limit</strong> in settings. Once a player reaches their Hold Limit, they <strong>automatically lose</strong> the game.</li>
+                    <li>You can also adjust the <strong>Winning Score</strong> in settings to make the game easier or harder.</li>
                 </ul>
+            </li>
+        </ul>
 
-                <h4>5. Game Reset</h4>
-                <ul>
-                    <li>If the game is reset, all players' <strong>Total Scores</strong> will be set to zero, and Player 1 will start.</li>
-                </ul>
-            </div>
-        </div>
+        <h4>4. Winning the Game</h4>
+        <ul>
+            <li>If your <strong>Total Score</strong> is at or above the <strong>Winning Score</strong>, you win.</li>
+            <li>If your opponent reaches their <strong>Hold Limit</strong>, they lose automatically, and you win.</li>
+        </ul>
+
+        <h4>5. Game Reset</h4>
+        <ul>
+            <li>If the game is reset, all players' <strong>Total Scores</strong> will be set to zero, Hold Counts will reset, and Player 1 will start.</li>
+        </ul>
+    </div>
+</div>
+
     </div>
     </div>
     <script src="app.js"></script>
