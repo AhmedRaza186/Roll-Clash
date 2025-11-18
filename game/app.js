@@ -147,7 +147,7 @@ holdBtn.addEventListener('click', function () {
         totalScore2 += CScoreNum
         TScore.innerText = totalScore2
     }
-    if ((player1Turn && totalScore1 >= 50) || (!player1Turn && totalScore2 >= 50)) {
+    if ((player1Turn && totalScore1 >= 10) || (!player1Turn && totalScore2 >= 10)) {
         
         winner(player1Turn ? player1Name : player2Name,!player1Turn ? player1Name : player2Name,player1Turn ? totalScore1 : totalScore2,!player1Turn ? totalScore1 : totalScore2)
     }
@@ -168,6 +168,7 @@ function winner(winner,loser,winnerScore,loserScore) {
     winnerModal.style.opacity = '1'
     let winnerText =  document.querySelector('#winnerText')
     winnerText.innerText = `${winner} Wins`
+window.location = ''
 
     let resultArr = JSON.parse(localStorage.getItem('winnerResult')) || []
 
