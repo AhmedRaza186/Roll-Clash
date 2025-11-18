@@ -11,7 +11,9 @@ scoreboardBtn.addEventListener('click', openscoreboard)
 function openscoreboard() {
     scoreboardSidebar.style.transform = 'translateX(0)'
     if(sidebarDefault == 'none')scoreboardSidebar.style.display = 'flex'
-
+                  scoreboardBtn.scrollIntoView({
+    behavior: 'smooth'
+})
 
 
 }

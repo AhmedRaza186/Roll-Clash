@@ -541,7 +541,9 @@ main {
     .scoreboardSidebar{
         display: none;
     }
-    
+    #backBtn{
+        margin-top: 50px;
+    }
     .settings-modal {
         width: 95%;
         padding: 15px 15px;
