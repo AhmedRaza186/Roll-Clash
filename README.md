@@ -1,52 +1,79 @@
-# 🎲 Roll Clash
+🎲 Roll Clash – A 2-Player Dice Game
 
-**Roll Clash** is a fun, turn-based dice game where players take risks to reach the winning score first! Built with **HTML, CSS, and JavaScript**, this game tracks scores, shows a leaderboard, and keeps your game history in localStorage.  
+Roll Clash is a fun, strategic, and fully responsive turn-based dice game built using HTML, CSS, and JavaScript.
+Players take risks, manage their hold limits, customize the winning score, and battle it out to become the ultimate dice champion!
 
----
+The game also includes a persistent leaderboard powered by localStorage — so your wins stay saved even after refresh.
 
-## 🏆 Game Features
-- Two-player turn-based gameplay
-- Current score and total score tracking
-- Dice roll animations with sound effects
-- Leaderboard to track winners and losers
-- Responsive UI for desktop and mobile
-- Game history saved in localStorage
+🏆 Features
 
----
+– Two-player turn-based gameplay
+– Current score + total score tracking
+– Custom winning score system
+– Hold limit mechanic (holding too many times = automatic loss)
+– Dice roll animations + sound effects
+– Persistent leaderboard (saved with localStorage)
+– Responsive UI for all screen sizes
+– In-game rules / guide modal
 
-## 🎯 Objective
-Be the **first player** to reach a **Total Score of 10 or more** (can be changed in code for higher difficulty).  
+🎯 Objective
 
----
+Be the first player to reach the target winning score.
+(Default is 50, but can be changed inside the game settings.)
 
-## 📝 Game Rules
-1. **Start Your Turn**  
-   - Your **Current Score** starts at 0.  
-   - Roll the dice to try your luck.  
+You can also adjust the Hold Limit — if any player uses all their holds, they instantly lose.
 
-2. **Roll Outcomes**  
-   - **Rolling 2-6:** Add the number to your **Current Score**.  
-     - You can **Roll Again** to risk more points.  
-     - Or **Hold** to add current score to your total.  
-   - **Rolling 1:** Your **Current Score** resets to 0 and your turn ends immediately.  
+📝 Game Rules
+1. Start Your Turn
 
-3. **Hold Your Score**  
-   - When you hold, your current points are added to **Total Score**.  
-   - If your **Total Score ≥ 10**, you win the game!  
+– Your Current Score starts at 0
+– Roll the dice to begin your turn
 
-4. **Winning the Game**  
-   - The player who first reaches the target score wins.  
-   - Winner and loser scores are saved in the leaderboard automatically.  
+2. Roll Outcomes
 
----
+Rolling 2–6:
+– Added to your Current Score
+– Choose to Roll Again or Hold
 
-## ⚙️ How to Play
-1. Enter player names in the modal or leave blank for defaults.  
-2. Click **Play Game** to start.  
-3. Roll the dice or hold to accumulate points strategically.  
-4. View the leaderboard to see previous winners and scores.
+Rolling 1:
+– Current Score becomes 0
+– Turn ends immediately
 
-## 💻 Technologies Used
-- HTML5  
-- CSS3 (with responsive design and animations)  
-- Vanilla JavaScript 
+3. Hold Your Score
+
+– Adds Current Score → Total Score
+– If Total Score ≥ Winning Score → You Win!
+– Hold count reduces based on Hold Limit
+
+4. Hold Limit Rule
+
+– Each player has a limited number of holds (if set)
+– If a player reaches the limit → Instant Loss
+
+5. Leaderboard
+
+– Winner + loser info saved automatically
+– Displays full game history
+
+⚙️ How to Play
+
+– Enter player names (optional)
+– Set Winning Score & Hold Limit
+– Click Play Game
+– Roll or Hold strategically
+– View game history in the leaderboard
+
+💻 Technologies Used
+
+– HTML5
+– CSS3 (responsive UI + animations)
+– Vanilla JavaScript (game logic + localStorage)
+
+🔗 Live Demo
+
+👉 Play Now:
+https://ahmedraza186.github.io/Roll-Clash/
+
+📦 About This Project
+
+"🎲 Roll Clash – A 2-player dice game with animations, custom rules, and a persistent leaderboard built using HTML, CSS & JavaScript."
