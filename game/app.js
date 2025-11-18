@@ -2,19 +2,53 @@ document.querySelector('nav h1').addEventListener('click', function () {
     window.location = './../index.html'
 })
 
+let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
+let sidebarDefault = getComputedStyle(scoreboardSidebar).display
+console.log(sidebarDefault)
+
 let scoreboardBtn = document.querySelector('#scoreboard')
 scoreboardBtn.addEventListener('click', openscoreboard)
 function openscoreboard() {
-    let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
     scoreboardSidebar.style.transform = 'translateX(0)'
+    if(sidebarDefault == 'none')scoreboardSidebar.style.display = 'flex'
+                  scoreboardBtn.scrollIntoView({
+    behavior: 'smooth'
+})
+
 
 }
+let openSettings = document.querySelector("#openSettings");
+let modalOverlay = document.querySelector("#modalOverlay");
+let settingsModal = document.querySelector("#settingsModal");
+let saveSettings = document.querySelector("#saveSettings");
+
+openSettings.addEventListener("click", () => {
+    modalOverlay.style.display = "block";
+    document.querySelector('.settings-modal').style.display = 'block'
+    settingsModal.classList.add("show");
+});
+
+// modalOverlay.addEventListener("click", () => {
+//     modalOverlay.style.display = "none";
+//     settingsModal.classList.remove("show");
+// });
+
+saveSettings.addEventListener("click", () => {
+    modalOverlay.style.display = "none";
+    document.querySelector('.settings-modal').style.display = 'none'
+
+    settingsModal.classList.remove("show");
+
+    // values later connect to game...
+})
 
 let backBtn = document.querySelector('#backBtn')
 backBtn.addEventListener('click', closescoreboard)
 function closescoreboard() {
     let scoreboardSidebar = document.querySelector('.scoreboardSidebar')
     scoreboardSidebar.style.transform = 'translateX(100%)'
+    if(sidebarDefault == 'none')scoreboardSidebar.style.display = 'none'
+
 
 }
 let player1Name

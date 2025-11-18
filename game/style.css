@@ -218,7 +218,7 @@ main {
     text-align: center;
     box-shadow: var(--shadow);
     color: var(--text);
-    margin-bottom: 150px;
+
 }
 
 .playerNameModal .modalContent h2 {
@@ -258,6 +258,93 @@ main {
     transform: scale(1.05);
 }
 
+.settings-icon {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 5;
+    color: #333;
+}
+
+
+.modalOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.45);
+    backdrop-filter: blur(3px);
+    z-index: 50;
+}
+
+
+.settings-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 380px;
+    background: var(--bg2);
+    padding: 18px 20px;
+    border-radius: 15px;
+    z-index: 100;
+    max-height: 80vh;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+
+.settings-modal::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.settings-modal h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.settings-modal label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    font-weight: 500;
+    color: var(--text);
+}
+
+
+.settings-modal input,
+.settings-modal select {
+    width: 100%;
+    padding: 9px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid var(--bg2);
+    outline: none;
+    font-size: 14px;
+}
+
+
+#saveSettings {
+    width: 100%;
+    margin-top: 18px;
+    padding: 11px;
+    border-radius: 12px;
+    border: none;
+    background: var(--accent);
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+
+
+
 
 .players {
     display: flex;
@@ -267,7 +354,7 @@ main {
     height: 100%;
     border-radius: 10px;
     background: var(--panel);
-
+    
 }
 .active{
     background-color: var(--activePanel);
@@ -275,7 +362,7 @@ main {
 #player1 {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
-
+    
 }
 
 #player2 {
@@ -348,7 +435,7 @@ main {
     border: none;
     border-radius: var(--radius);
     background: var(--bg1);
-
+    
 }
 
 .btns button img {
@@ -361,7 +448,7 @@ main {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 130vh;
+    height: 100vh;
     background: rgba(45, 27, 71, 0.8); 
     display: none;
     justify-content: center;
@@ -375,7 +462,7 @@ main {
 
 .winnerModal.show {
     opacity: 1;
-
+    
 }
 
 .modalContent {
@@ -425,11 +512,11 @@ main {
     body {
         overflow-y: auto;
     }
-
+    
     nav h1 {
         font-size: 1.5rem;
     }
-
+    
     nav button {
         font-size: 1rem;
     }
@@ -451,7 +538,25 @@ main {
         gap: 50px;
         height: 100vh;
     }
+    .scoreboardSidebar{
+        display: none;
+    }
     
+    .settings-modal {
+        width: 95%;
+        padding: 15px 15px;
+        max-height: 85vh;
+    }
+    
+    .settings-modal h2 {
+        font-size: 18px;
+            margin-bottom: 12px;
+        }
+        
+        #saveSettings {
+            padding: 10px;
+        }
+        
     .btns{
         position: static;
         width: 100%;
@@ -474,7 +579,7 @@ main {
         gap: 15px;
         width: 80%;
         border-radius: var(--radius);
-    
+        
     }
     .playerInfoAndTS{
         height: auto;
@@ -482,16 +587,16 @@ main {
     .CScore{
         height: auto;
     }
-.scoreBox{
-    height: auto;
-    font-size: 1.2rem;
-    gap: 5px;
-    padding: 5px 0;
-}
-#player1{
-    border-bottom-right-radius: var(--radius);
+    .scoreBox{
+        height: auto;
+        font-size: 1.2rem;
+        gap: 5px;
+        padding: 5px 0;
+    }
+    #player1{
+        border-bottom-right-radius: var(--radius);
     border-top-right-radius: var(--radius);
-
+    
 }
 #player2 {
     border-bottom-left-radius: var(--radius);
@@ -500,10 +605,10 @@ main {
 }
 /* .scoreboardSidebar{
     height: calc(100vh - 150px);
-} */
+    } */
 }
 @media (max-width:480px){
-
+    
     main{
         display: grid;
         width: 100%;
@@ -519,7 +624,7 @@ main {
         height: auto;
         align-items: center;
     }
-
+    
     #newGame{
         grid-area: newgame;
         width: 60%;
@@ -557,6 +662,17 @@ main {
     }
     .btns{
         display: contents;
+    }
+}
+@media (max-width: 340px) {
+    .settings-modal input,
+    .settings-modal select {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    #saveSettings {
+        font-size: 14px;
     }
 }
 

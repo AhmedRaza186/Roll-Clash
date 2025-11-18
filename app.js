@@ -14,12 +14,14 @@ function closeManual(){
   manual.style.display = 'none'
 
 }
+let leaderboardSidebar = document.querySelector('.leaderboardSidebar')
+let sidebarDefault = getComputedStyle(leaderboardSidebar).display
 
 let leaderboardBtn = document.querySelector('#leaderboard')
 leaderboardBtn.addEventListener('click', openleaderboard)
 function openleaderboard() {
-    let leaderboardSidebar = document.querySelector('.leaderboardSidebar')
     leaderboardSidebar.style.transform = 'translateX(0)'
+    if(sidebarDefault == 'none')leaderboardSidebar.style.display = 'flex'
     updateleaderboard()
 
 }
@@ -27,8 +29,9 @@ function openleaderboard() {
 let leaderboardBackBtn = document.querySelector('#backBtn')
 leaderboardBackBtn.addEventListener('click', closeleaderboard)
 function closeleaderboard() {
-    let leaderboardSidebar = document.querySelector('.leaderboardSidebar')
     leaderboardSidebar.style.transform = 'translateX(100%)'
+    if(sidebarDefault == 'none')leaderboardSidebar.style.display = 'none'
+
 
 }
 
